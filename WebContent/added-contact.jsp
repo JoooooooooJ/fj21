@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<form action="mostraidade.jsp">
-		idade: <input type="text" name="idade">
-		<input type="submit">
-	</form>
-
+	<h1>Contato ${param.name} adicionado com sucesso!</h1>
 </body>
 </html>

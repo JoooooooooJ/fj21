@@ -7,7 +7,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -49,12 +52,11 @@ public class addContactServlet extends HttpServlet {
 		cdao.add(c);
 
 		
-		out.println("<html>\r\n	"
-				+ "<body>\r\n" + 
-				"		<h1> Contato de "+c.getName()+" salvo com sucesso </h1>\r\n" + 
-				"	</body>\r\n" + 
-				" </html>");      
-	}
+		RequestDispatcher rd = req.getRequestDispatcher("/added-contact.jsp");
+		rd.forward(req, resp);
 
-
+		}
 }
+
+
+
