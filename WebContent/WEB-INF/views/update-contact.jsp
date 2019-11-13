@@ -11,7 +11,7 @@
 		<h1>Alterar Contato</h1>
 			<hr />
 			<form action="mvc?logic=UpdateContactLogic&id=${param.id }" method="POST">
-				Nome: 			 <input type="text" name="name""/><br />
+				Nome: 			 <input type="text" name="name"/><br />
 				E-mail: 		 <input type="text" name="email" /><br />
 				Endereço: 		 <input type="text" name="address"/><br />
 				Data Nascimento: <input type="text" name="birthday"/>  								
