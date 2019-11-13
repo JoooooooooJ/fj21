@@ -18,7 +18,7 @@ public class ListContactLogic implements Logic {
 
         req.setAttribute("contacts", contacts);
 
-        return "list-contact.jsp";
+        return "WEB-INF/jsp/list-contact.jsp";
 	}
 
 }

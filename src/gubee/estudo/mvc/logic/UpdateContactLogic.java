@@ -29,12 +29,14 @@ public class UpdateContactLogic implements Logic{
 			} catch (ParseException e) {
 				throw new RuntimeException(e);
 			}
-		c.setBirthday(Calendar.getInstance());
+		c.setBirthday(birthday);
+		c.setId(Long.parseLong(req.getParameter("id")));
 		
 		
 		ContactDao cdao = new ContactDao();		
 		cdao.update(c);
-		return "list-contact.jsp";
+		
+		return "mvc?logic=ListContactLogic";
 	}
 
 }

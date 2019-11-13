@@ -8,12 +8,12 @@
 <title>Bem Vindo</title>
 </head>
 	<body>
-				<c:import url="Header.jsp"></c:import>
+				<c:import url="WEB-INF/jsp/Header.jsp"></c:import>
             	 <h1>"Bem vindo ao sistema de agenda do FJ-21!"</h1>
                  <br />
 				 <h4>Desenvolvido por JooJ</h4>
                  <br />                 
-                 <form action="add-contact.jsp">
+                 <form method="POST" action="mvc?logic=CallAddContacts">
                  <input type="submit" value="Adicionar Contatos"/>
                  </form>
                  <form method="POST" action="mvc?logic=ListContactLogic">

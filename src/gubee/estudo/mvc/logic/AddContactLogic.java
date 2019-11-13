@@ -35,7 +35,7 @@ public class AddContactLogic implements Logic{
 		
 		ContactDao cdao = new ContactDao();		
 		cdao.add(c);		
-		return "/added-contact.jsp";
+		return "WEB-INF/jsp/added-contact.jsp";
 
 
 	}
