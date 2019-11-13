@@ -2,7 +2,7 @@ package gubee.estudo.web;
 
 import java.util.Calendar;
 
-public class Contato {
+public class Contact {
 
 	private Long id;
 	private String name;
@@ -10,10 +10,10 @@ public class Contato {
 	private String address;
 	private Calendar birthday;
 	
-	public Contato() {
+	public Contact() {
 		
 	}
-	public Contato(String name, String email, String address) {
+	public Contact(String name, String email, String address) {
 		super();
 		this.name = name;
 		this.email = email;

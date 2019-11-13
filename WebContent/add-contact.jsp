@@ -9,15 +9,14 @@
 <title>Adicionar Contatos</title>
 </head>
 	<body>
-		<c:import url="cabecalho.jsp"/>
+		<c:import url="Header.jsp"/>
 		<h1>Adiciona Contatos</h1>
 			<hr />
-			<form action="AddContact">
-				Nome: <input type="text" name="name" /><br />
-				E-mail: <input type="text" name="email" /><br />
-				Endereço: <input type="text" name="address" /><br />
-				Data Nascimento: <tag:campoData id="birthday" /><br />
-								
+			<form action="mvc?logic=AddContactLogic" method="POST">
+				Nome: 			 <input type="text" name="name" /><br />
+				E-mail: 		 <input type="text" name="email" /><br />
+				Endereço: 		 <input type="text" name="address" /><br />
+				Data Nascimento: <input type="text" name="birthday"/>  								
 				<input type="submit" value="Gravar" />
 			</form>
 	

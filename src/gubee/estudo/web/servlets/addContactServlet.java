@@ -9,15 +9,13 @@ import java.util.Calendar;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import gubee.estudo.jdbc.dao.ContatosDao;
-import gubee.estudo.web.Contato;
+import gubee.estudo.jdbc.dao.ContactDao;
+import gubee.estudo.web.Contact;
 
 @WebServlet("/AddContact")
 public class addContactServlet extends HttpServlet {
@@ -29,7 +27,7 @@ public class addContactServlet extends HttpServlet {
 		
 		PrintWriter out = resp.getWriter();
 		
-		Contato c = new Contato();
+		Contact c = new Contact();
 		
 		c.setName(req.getParameter("name"));
 		c.setEmail(req.getParameter("email"));
@@ -45,10 +43,10 @@ public class addContactServlet extends HttpServlet {
 				out.println("erro ao converter data");
 				return;
 			}
-		c.setBirthday(Calendar.getInstance());
+		c.setBirthday(birthday);
 		
 		
-		ContatosDao cdao = new ContatosDao();		
+		ContactDao cdao = new ContactDao();		
 		cdao.add(c);
 
 		
