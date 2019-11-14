@@ -32,10 +32,11 @@ public class AddContactLogic implements Logic{
 			}
 		c.setBirthday(birthday);
 		
+		ThreadLocal<HttpServletRequest> connection = (ThreadLocal<HttpServletRequest>) req;
 		
-		ContactDao cdao = new ContactDao();		
+		ContactDao cdao = new ContactDao(connection);		
 		cdao.add(c);		
-		return "WEB-INF/jsp/added-contact.jsp";
+		return "WEB-INF/views/added-contact.jsp";
 
 
 	}

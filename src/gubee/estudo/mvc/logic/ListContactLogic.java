@@ -13,12 +13,13 @@ public class ListContactLogic implements Logic {
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		
-
-        List<Contact> contacts = new ContactDao().getList();
+		ThreadLocal<HttpServletRequest> connection = (ThreadLocal<HttpServletRequest>) req;
+		
+        List<Contact> contacts = new ContactDao(connection).getList();
 
         req.setAttribute("contacts", contacts);
 
-        return "WEB-INF/jsp/list-contact.jsp";
+        return "WEB-INF/views/list-contact.jsp";
 	}
 
 }

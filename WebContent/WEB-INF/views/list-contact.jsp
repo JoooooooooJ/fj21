@@ -25,8 +25,7 @@
 					<td>${contato.address}</td>
 					<td><fmt:formatDate value="${contato.birthday.time}" pattern="dd/MM/yyyy"/></td>
 					<td><a href="mvc?logic=RemoveContactLogic&id=${contato.id}">Remover</a></td>
-					<td><form method="POST" action="mvc?logic=CallUpdateContact&id=${contato.id}"><input type="submit" value="Alterar Contato"/></form>
-					
+					<td><form method="POST" action="mvc?logic=CallUpdateContact&id=${contato.id}"><input type="submit" value="Alterar Contato"/></form></td>					
 				</tr>		
 			</c:forEach>
     	</table>    

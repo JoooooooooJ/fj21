@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CallUpdateContact implements Logic {
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-		return "WEB-INF/jsp/update-contact.jsp";
+		return "WEB-INF/views/update-contact.jsp";
 	}
 
 }

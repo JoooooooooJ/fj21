@@ -7,7 +7,7 @@ public class CallAddContacts implements Logic {
 
 	@Override
 	public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-		return "WEB-INF/jsp/add-contact.jsp";
+		return "WEB-INF/views/add-contact.jsp";
 	}
 
 }

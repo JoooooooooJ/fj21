@@ -12,8 +12,9 @@ public class RemoveContactLogic implements Logic{
 	public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 
 		Contact c = new Contact();		
-		c.setId(Long.parseLong(req.getParameter("id")));		
-		ContactDao cdao = new ContactDao();		
+		c.setId(Long.parseLong(req.getParameter("id")));
+		ThreadLocal<HttpServletRequest> connection = (ThreadLocal<HttpServletRequest>) req;
+		ContactDao cdao = new ContactDao(connection);		
 		cdao.remove(c);	
 		
 		return "mvc?logic=ListContactLogic";

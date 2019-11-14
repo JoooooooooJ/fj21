@@ -32,8 +32,8 @@ public class UpdateContactLogic implements Logic{
 		c.setBirthday(birthday);
 		c.setId(Long.parseLong(req.getParameter("id")));
 		
-		
-		ContactDao cdao = new ContactDao();		
+		ThreadLocal<HttpServletRequest> connection = (ThreadLocal<HttpServletRequest>) req;
+		ContactDao cdao = new ContactDao(connection);		
 		cdao.update(c);
 		
 		return "mvc?logic=ListContactLogic";

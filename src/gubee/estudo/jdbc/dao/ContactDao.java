@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import gubee.estudo.jdbc.ConnectionFactory;
 import gubee.estudo.web.Contact;
 
@@ -12,9 +14,9 @@ public class ContactDao implements Database<Contact>{
 	
 	private Connection connection;
 	
-	public ContactDao() {
+	public ContactDao(ThreadLocal<HttpServletRequest> con) {
 		
-		this.connection = new ConnectionFactory().getConnection();
+		this.connection = (Connection) con.get().getAttribute("connection");
 	}
 	
 	@Override
@@ -87,17 +89,16 @@ public class ContactDao implements Database<Contact>{
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
+            	
+            	Calendar data = Calendar.getInstance();
+                data.setTime(rs.getDate("dataNascimento"));
                 
                 Contact contact = new Contact();
                 contact.setId(rs.getLong("id"));
                 contact.setName(rs.getString("nome"));
                 contact.setEmail(rs.getString("email"));
-                contact.setAddress(rs.getString("endereco"));
-
-                Calendar data = Calendar.getInstance();
-                data.setTime(rs.getDate("dataNascimento"));
+                contact.setAddress(rs.getString("endereco"));               
                 contact.setBirthday(data);
-
                 contacts.add(contact);
             }
             rs.close();
